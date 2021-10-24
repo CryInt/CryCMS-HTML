@@ -1,45 +1,34 @@
 <?php
 namespace CryCMS;
 
-/**
- * + br
- * + div
- * + form
- */
-
 class HTML
 {
+    protected static $simpleElements = [
+        'div', 'form', 'select',
+    ];
+
     public static function __callStatic($name, $arguments)
     {
+        if (in_array($name, self::$simpleElements, true)) {
+            return self::simpleElement($name, $arguments[0] ?? '', $arguments[1] ?? []);
+        }
+
         return 'HTML element "' . $name . '" is not exists';
     }
 
-    public static function br(?array $properties = null): string
+    public static function a(string $content, string $href, array $properties = []): string
+    {
+        return self::simpleElement('a', $content, array_merge($properties, ['href' => $href]));
+    }
+
+    public static function br(array $properties = []): string
     {
         $propertiesIn = self::generateProperties($properties);
         $html = "<br" . $propertiesIn . ">";
         return self::generateAround($html, $properties);
     }
 
-    public static function div(string $content, ?array $properties = null): string
-    {
-        $propertiesIn = self::generateProperties($properties);
-
-        $html = "<div" . $propertiesIn . ">" . $content . "</div>";
-
-        return self::generateAround($html, $properties);
-    }
-
-    public static function form(string $content, array $properties = null): string
-    {
-        $propertiesIn = self::generateProperties($properties);
-
-        $html = "<form" . $propertiesIn . ">" . $content . "</form>";
-
-        return self::generateAround($html, $properties);
-    }
-
-    public static function input(string $name, string $value = null, array $properties = null): string
+    public static function input(string $name, string $value = null, array $properties = []): string
     {
         if (!isset($properties['type'])) {
             $properties['type'] = 'text';
@@ -55,14 +44,26 @@ class HTML
         return self::generateAround($html, $properties);
     }
 
-    protected static function generateAround(string $html, ?array $properties): string
+    public static function option(string $content, string $value, array $properties = []): string
     {
-        if (isset($properties['around']) && is_array($properties['around'])) {
-            foreach ($properties['around'] as $once) {
-                if (isset($once['_type']) && method_exists(__CLASS__, $once['_type']) === true) {
-                    $html = self::{$once['_type']}($html, $once);
-                }
-            }
+        return self::simpleElement('option', $content, array_merge($properties, ['value' => $value]));
+    }
+
+    protected static function simpleElement(string $element, string $content, array $properties = []): string
+    {
+        $propertiesIn = self::generateProperties($properties);
+        $html = "<" . $element . $propertiesIn . ">" . $content . "</" . $element . ">";
+        return self::generateAround($html, $properties);
+    }
+
+    protected static function generateAround(string $html, array $properties = []): string
+    {
+        if (
+            isset($properties['around']['_type']) &&
+            is_array($properties['around']) &&
+            is_callable(__CLASS__, $properties['around']['_type']) === true
+        ) {
+            $html = self::{$properties['around']['_type']}($html, $properties['around']);
         }
 
         return $html;
