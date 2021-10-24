@@ -1,0 +1,19 @@
+{
+    "name": "cry/cry-cms-html",
+    "description": "class for create html from php",
+    "type": "library",
+    "require": {
+    },
+    "license": "free",
+    "autoload": {
+        "psr-4": {
+            "CryCMS\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Дмитрий Cry",
+            "email": "cry.int@gmail.com"
+        }
+    ]
+}
