@@ -2,8 +2,8 @@
 
 https://www.w3.org/wiki/Category:HTMLElement
 
-* (E) (D) HTML/Elements/a
-* (E) HTML/Elements/abbr
+* :purple_circle: (D) HTML/Elements/a
+* :purple_circle: HTML/Elements/abbr
 * HTML/Elements/acronym
 * HTML/Elements/address
 * HTML/Elements/applet
@@ -20,7 +20,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/blink
 * HTML/Elements/blockquote
 * HTML/Elements/body
-* (E) (D) HTML/Elements/br
+* :purple_circle: (D) HTML/Elements/br
 * HTML/Elements/button
 * HTML/Elements/canvas
 * HTML/Elements/caption
@@ -35,7 +35,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/del
 * HTML/Elements/details
 * HTML/Elements/dfn
-* (S) (D) HTML/Elements/div
+* :green_circle: (D) HTML/Elements/div
 * HTML/Elements/dl
 * HTML/Elements/dt
 * HTML/Elements/em
@@ -45,10 +45,10 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/figure
 * HTML/Elements/font
 * HTML/Elements/footer
-* (S) HTML/Elements/form
+* :green_circle: HTML/Elements/form
 * HTML/Elements/frame
 * HTML/Elements/frameset
-* (S) (D) HTML/Elements/h1, h2, h3, h4, h5, and h6
+* :green_circle: (D) HTML/Elements/h1, h2, h3, h4, h5, and h6
 * HTML/Elements/head
 * HTML/Elements/header
 * HTML/Elements/hgroup
@@ -56,7 +56,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/html
 * HTML/Elements/i
 * HTML/Elements/iframe
-* (E) HTML/Elements/input
+* :purple_circle: HTML/Elements/input
 * HTML/Elements/ins
 * HTML/Elements/kbd
 * HTML/Elements/keygen
@@ -82,7 +82,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/object
 * HTML/Elements/ol
 * HTML/Elements/optgroup
-* (E) HTML/Elements/option
+* :purple_circle: HTML/Elements/option
 * HTML/Elements/output
 * HTML/Elements/p
 * HTML/Elements/param
@@ -97,7 +97,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/samp
 * HTML/Elements/script
 * HTML/Elements/section
-* (S) HTML/Elements/select
+* :green_circle: HTML/Elements/select
 * HTML/Elements/source
 * HTML/Elements/spacer
 * HTML/Elements/span
@@ -108,16 +108,16 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/summary
 * HTML/Elements/sup
 * HTML/Elements/svg
-* (S) HTML/Elements/table
-* (S) HTML/Elements/tbody
-* (S) HTML/Elements/td
-* (S) HTML/Elements/textarea
-* (S) HTML/Elements/tfoot
-* (S) HTML/Elements/th
-* (S) HTML/Elements/thead
+* :green_circle: HTML/Elements/table
+* :green_circle: HTML/Elements/tbody
+* :green_circle: HTML/Elements/td
+* :green_circle: HTML/Elements/textarea
+* :green_circle: HTML/Elements/tfoot
+* :green_circle: HTML/Elements/th
+* :green_circle: HTML/Elements/thead
 * HTML/Elements/time
 * HTML/Elements/title
-* (S) HTML/Elements/tr
+* :green_circle: HTML/Elements/tr
 * HTML/Elements/track
 * HTML/Elements/tt
 * HTML/Elements/u
@@ -129,6 +129,13 @@ https://www.w3.org/wiki/Category:HTMLElement
 
 Additional:
 
-* (A) selectOption - select with auto create option from array
+* :blue_square: selectOption - select with auto create option from array
 * icon - https://fontawesome.com/v6.0/icons?m=free
-* (A) (D) tableGrid - build table from array
+* :blue_square: (D) tableGrid - build table from array
+
+---
+
+- :green_circle: - support with simple mode (content, properties)
+- :purple_circle: - elements with extended parameters
+- :blue_square: - not html element, its additional helpers
+- without icon - in develop
