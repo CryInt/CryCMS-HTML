@@ -49,7 +49,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/frame
 * HTML/Elements/frameset
 * :green_circle: HTML/Elements/h1, h2, h3, h4, h5, and h6
-* HTML/Elements/head
+* :green_circle: HTML/Elements/head
 * HTML/Elements/header
 * HTML/Elements/hgroup
 * HTML/Elements/hr

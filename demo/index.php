@@ -37,14 +37,18 @@ echo HTML::tableGrid([
 
 echo "W" . HTML::wbr() . "BR";
 
+echo HTML::strong("STRONG");
+
 echo HTML::style("body { font-size: 14px; }");
 
 $content = ob_get_clean();
 
-echo $title = HTML::title("HTML DEMO PAGE");
-echo $script = HTML::script('https://kit.fontawesome.com/b2478143fd.js', ['crossorigin' => 'anonymous']);
+$title = HTML::title("HTML DEMO PAGE");
+$script = HTML::script('https://kit.fontawesome.com/b2478143fd.js', ['crossorigin' => 'anonymous']);
 
 $body = HTML::body($content);
+
+$body = HTML::head($title . $script) . $body;
 
 echo HTML::html($body);
 

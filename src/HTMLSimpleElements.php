@@ -13,9 +13,11 @@ namespace CryCMS;
  * @method static h4 (string $content, array $properties = [])
  * @method static h5 (string $content, array $properties = [])
  * @method static h6 (string $content, array $properties = [])
+ * @method static head (string $content, array $properties = [])
  * @method static html (string $content, array $properties = [])
  * @method static i (string $content, array $properties = [])
  * @method static select (string $optionsHTML, array $properties = [])
+ * @method static strong (string $text = '', array $properties = [])
  * @method static style (string $text = '', array $properties = [])
  * @method static sub (string $text = '', array $properties = [])
  * @method static summary (string $text = '', array $properties = [])
@@ -43,9 +45,9 @@ abstract class HTMLSimpleElements extends HTMLHelper
         'b', 'body',
         'div',
         'form',
-        'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'html',
+        'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'html',
         'i',
-        'select', 'style', 'sub', 'summary', 'sup',
+        'select', 'strong', 'style', 'sub', 'summary', 'sup',
         'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'textarea', 'time', 'title',
         'u', 'ul',
         'var', 'video',
