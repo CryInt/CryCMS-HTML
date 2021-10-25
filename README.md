@@ -3,16 +3,16 @@
 https://www.w3.org/wiki/Category:HTMLElement
 
 * :purple_circle: HTML/Elements/a
-* :purple_circle: HTML/Elements/abbr
+* :green_circle: HTML/Elements/abbr
 * :black_circle: HTML/Elements/acronym
 * :green_circle: HTML/Elements/address
 * :black_circle: HTML/Elements/applet
-* HTML/Elements/area
-* HTML/Elements/article
-* HTML/Elements/aside
-* HTML/Elements/audio
+* :green_circle: HTML/Elements/area
+* :green_circle: HTML/Elements/article
+* :green_circle: HTML/Elements/aside
+* :green_circle: HTML/Elements/audio
 * :green_circle: HTML/Elements/b
-* HTML/Elements/base
+* :green_circle: HTML/Elements/base
 * HTML/Elements/basefont
 * HTML/Elements/bdo
 * HTML/Elements/bgsound
@@ -59,7 +59,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :purple_circle: HTML/Elements/input
 * HTML/Elements/ins
 * HTML/Elements/kbd
-* HTML/Elements/keygen
+* :black_circle: HTML/Elements/keygen
 * HTML/Elements/label
 * HTML/Elements/legend
 * HTML/Elements/li
@@ -127,7 +127,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_circle: HTML/Elements/wbr
 * :black_circle: HTML/Elements/xmp
 
-Additional:
+**Additional:**
 
 * :blue_square: selectOption - select with auto create option from array
 * :blue_square: faIcon - https://fontawesome.com/v6.0/icons?m=free

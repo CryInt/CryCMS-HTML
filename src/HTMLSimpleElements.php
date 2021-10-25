@@ -2,7 +2,13 @@
 namespace CryCMS;
 
 /**
+ * Simple Elements
+ *
+ * @method static abbr (string $content, array $properties = [])
  * @method static address (string $content, array $properties = [])
+ * @method static article (string $content, array $properties = [])
+ * @method static aside (string $content, array $properties = [])
+ * @method static audio (string $content, array $properties = [])
  * @method static b (string $content, array $properties = [])
  * @method static body (string $content, array $properties = [])
  * @method static div (string $content, array $properties = [])
@@ -36,12 +42,20 @@ namespace CryCMS;
  * @method static ul (string $text = '', array $properties = [])
  * @method static var (string $text = '', array $properties = [])
  * @method static video (string $text = '', array $properties = [])
+ *
+ * Half Elements
+ *
+ * @method static area (array $properties = [])
+ * @method static base (array $properties = [])
+ * @method static br (array $properties = [])
+ * @method static track (array $properties = [])
+ * @method static wbr (array $properties = [])
  */
 
 abstract class HTMLSimpleElements extends HTMLHelper
 {
     protected static $simpleElements = [
-        'address',
+        'abbr', 'address', 'article', 'aside', 'audio',
         'b', 'body',
         'div',
         'form',
@@ -53,11 +67,21 @@ abstract class HTMLSimpleElements extends HTMLHelper
         'var', 'video',
     ];
 
+    protected static $halfElements = [
+        'area', 'base', 'br', 'track', 'wbr',
+    ];
+
     public static function __callStatic($name, $arguments)
     {
         if (in_array($name, self::$simpleElements, true)) {
             return self::removeDoubleAfterTag(
                 self::simpleElement($name, $arguments[0] ?? '', $arguments[1] ?? [])
+            );
+        }
+
+        if (in_array($name, self::$halfElements, true)) {
+            return self::removeDoubleAfterTag(
+                self::halfElement($name, $arguments[1] ?? [])
             );
         }
 
@@ -67,7 +91,15 @@ abstract class HTMLSimpleElements extends HTMLHelper
     protected static function simpleElement(string $element, string $content, array $properties = []): string
     {
         $propertiesIn = self::generateProperties($properties);
-        $html = "<" . $element . $propertiesIn . ">" . HTML::$afterTag . $content . HTML::$afterTag . "</" . $element . ">" . HTML::$afterTag;
+        $content = !empty($content) ? HTML::$afterTag . $content . HTML::$afterTag : $content;
+        $html = "<" . $element . $propertiesIn . ">" . $content . "</" . $element . ">" . HTML::$afterTag;
+        return self::generateAround($html, $properties);
+    }
+
+    protected static function halfElement(string $element, array $properties = []): string
+    {
+        $propertiesIn = self::generateProperties($properties);
+        $html = "<" . $element . $propertiesIn . ">" . HTML::$afterTag;
         return self::generateAround($html, $properties);
     }
 }

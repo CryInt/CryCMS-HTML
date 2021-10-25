@@ -8,18 +8,6 @@ abstract class HTMLElements extends HTMLSimpleElements
         return self::simpleElement('a', $content, array_merge($properties, ['href' => $href]));
     }
 
-    public static function abbr(string $content, string $title = '', array $properties = []): string
-    {
-        return self::simpleElement('abbr', $content, array_merge($properties, ['title' => $title]));
-    }
-
-    public static function br(array $properties = []): string
-    {
-        $propertiesIn = self::generateProperties($properties);
-        $html = "<br" . $propertiesIn . ">" . HTML::$afterTag;
-        return self::generateAround($html, $properties);
-    }
-
     public static function input(string $name, string $value = null, array $properties = []): string
     {
         if (!isset($properties['type'])) {
@@ -45,20 +33,6 @@ abstract class HTMLElements extends HTMLSimpleElements
     {
         $propertiesIn = self::generateProperties($properties);
         $html = "<script src='" . $src . "'" . $propertiesIn . "></script>" . HTML::$afterTag;
-        return self::generateAround($html, $properties);
-    }
-
-    public static function track(array $properties = []): string
-    {
-        $propertiesIn = self::generateProperties($properties);
-        $html = "<track" . $propertiesIn . ">" . HTML::$afterTag;
-        return self::generateAround($html, $properties);
-    }
-
-    public static function wbr(array $properties = []): string
-    {
-        $propertiesIn = self::generateProperties($properties);
-        $html = "<wbr" . $propertiesIn . ">";
         return self::generateAround($html, $properties);
     }
 }
