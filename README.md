@@ -2,16 +2,16 @@
 
 https://www.w3.org/wiki/Category:HTMLElement
 
-* :purple_circle: (D) HTML/Elements/a
+* :purple_circle: HTML/Elements/a
 * :purple_circle: HTML/Elements/abbr
-* HTML/Elements/acronym
-* HTML/Elements/address
-* HTML/Elements/applet
+* :black_circle: HTML/Elements/acronym
+* :green_circle: HTML/Elements/address
+* :black_circle: HTML/Elements/applet
 * HTML/Elements/area
 * HTML/Elements/article
 * HTML/Elements/aside
 * HTML/Elements/audio
-* HTML/Elements/b
+* :green_circle: HTML/Elements/b
 * HTML/Elements/base
 * HTML/Elements/basefont
 * HTML/Elements/bdo
@@ -19,8 +19,8 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/big
 * HTML/Elements/blink
 * HTML/Elements/blockquote
-* HTML/Elements/body
-* :purple_circle: (D) HTML/Elements/br
+* :green_circle: HTML/Elements/body
+* :purple_circle: HTML/Elements/br
 * HTML/Elements/button
 * HTML/Elements/canvas
 * HTML/Elements/caption
@@ -35,7 +35,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/del
 * HTML/Elements/details
 * HTML/Elements/dfn
-* :green_circle: (D) HTML/Elements/div
+* :green_circle: HTML/Elements/div
 * HTML/Elements/dl
 * HTML/Elements/dt
 * HTML/Elements/em
@@ -48,13 +48,13 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_circle: HTML/Elements/form
 * HTML/Elements/frame
 * HTML/Elements/frameset
-* :green_circle: (D) HTML/Elements/h1, h2, h3, h4, h5, and h6
+* :green_circle: HTML/Elements/h1, h2, h3, h4, h5, and h6
 * HTML/Elements/head
 * HTML/Elements/header
 * HTML/Elements/hgroup
 * HTML/Elements/hr
-* HTML/Elements/html
-* HTML/Elements/i
+* :green_circle: HTML/Elements/html
+* :green_circle: HTML/Elements/i
 * HTML/Elements/iframe
 * :purple_circle: HTML/Elements/input
 * HTML/Elements/ins
@@ -95,7 +95,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/ruby
 * HTML/Elements/s
 * HTML/Elements/samp
-* HTML/Elements/script
+* :purple_circle: HTML/Elements/script
 * HTML/Elements/section
 * :green_circle: HTML/Elements/select
 * HTML/Elements/source
@@ -103,10 +103,10 @@ https://www.w3.org/wiki/Category:HTMLElement
 * HTML/Elements/span
 * HTML/Elements/strike
 * HTML/Elements/strong
-* HTML/Elements/style
-* HTML/Elements/sub
-* HTML/Elements/summary
-* HTML/Elements/sup
+* :green_circle: HTML/Elements/style
+* :green_circle: HTML/Elements/sub
+* :green_circle: HTML/Elements/summary
+* :green_circle: HTML/Elements/sup
 * HTML/Elements/svg
 * :green_circle: HTML/Elements/table
 * :green_circle: HTML/Elements/tbody
@@ -115,27 +115,30 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_circle: HTML/Elements/tfoot
 * :green_circle: HTML/Elements/th
 * :green_circle: HTML/Elements/thead
-* HTML/Elements/time
-* HTML/Elements/title
+* :green_circle: HTML/Elements/time
+* :green_circle: HTML/Elements/title
 * :green_circle: HTML/Elements/tr
-* HTML/Elements/track
-* HTML/Elements/tt
-* HTML/Elements/u
-* HTML/Elements/ul
-* HTML/Elements/var
-* HTML/Elements/video
-* HTML/Elements/wbr
-* HTML/Elements/xmp
+* :green_circle: HTML/Elements/track
+* :black_circle: HTML/Elements/tt
+* :green_circle: HTML/Elements/u
+* :green_circle: HTML/Elements/ul
+* :green_circle: HTML/Elements/var
+* :green_circle: HTML/Elements/video
+* :green_circle: HTML/Elements/wbr
+* :black_circle: HTML/Elements/xmp
 
 Additional:
 
 * :blue_square: selectOption - select with auto create option from array
-* icon - https://fontawesome.com/v6.0/icons?m=free
-* :blue_square: (D) tableGrid - build table from array
+* :blue_square: icon - https://fontawesome.com/v6.0/icons?m=free
+* :blue_square: tableGrid - build table from array
+* uList - ul list from array
+* oList - ol list from array
 
 ---
 
 - :green_circle: - support with simple mode (content, properties)
 - :purple_circle: - elements with extended parameters
 - :blue_square: - not html element, its additional helpers
+- :black_circle: - deprecated
 - without icon - in develop

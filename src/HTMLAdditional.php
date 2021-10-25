@@ -32,4 +32,14 @@ abstract class HTMLAdditional extends HTMLElements
 
         return HTMLSimpleElements::table($content, $properties);
     }
+
+    public static function icon(string $icon, int $size = 1, $prefix = 'fas'): string
+    {
+        $class = [];
+        $class[] = $prefix;
+        $class[] = 'fa-' . $icon;
+        $class[] = 'fa-' . $size . 'x';
+
+        return HTML::i('', ['class' => implode(" ", $class)]);
+    }
 }

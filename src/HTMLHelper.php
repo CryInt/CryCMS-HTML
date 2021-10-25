@@ -68,14 +68,15 @@ abstract class HTMLHelper
                 $c = $once['content'] ?? '';
                 $p = $once;
                 unset($p['content']);
-                $content[] = HTML::td($c, $p);
+                $content[] = $element === 'thead' ? HTML::th($c, $p) : HTML::td($c, $p);
                 continue;
             }
 
-            $content[] = HTML::td($once);
+            $content[] = $element === 'thead' ? HTML::th($once) : HTML::td($once);
         }
 
         $content = implode(HTML::$afterTag, $content);
+        $content = HTML::tr($content);
 
         return HTML::$element($content);
     }

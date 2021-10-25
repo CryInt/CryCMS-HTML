@@ -40,4 +40,25 @@ abstract class HTMLElements extends HTMLSimpleElements
     {
         return self::simpleElement('option', $content, array_merge($properties, ['value' => $value]));
     }
+
+    public static function script(string $src, array $properties = []): string
+    {
+        $propertiesIn = self::generateProperties($properties);
+        $html = "<script src='" . $src . "'" . $propertiesIn . "></script>" . HTML::$afterTag;
+        return self::generateAround($html, $properties);
+    }
+
+    public static function track(array $properties = []): string
+    {
+        $propertiesIn = self::generateProperties($properties);
+        $html = "<track" . $propertiesIn . ">" . HTML::$afterTag;
+        return self::generateAround($html, $properties);
+    }
+
+    public static function wbr(array $properties = []): string
+    {
+        $propertiesIn = self::generateProperties($properties);
+        $html = "<wbr" . $propertiesIn . ">";
+        return self::generateAround($html, $properties);
+    }
 }
