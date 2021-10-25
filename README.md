@@ -130,7 +130,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 Additional:
 
 * :blue_square: selectOption - select with auto create option from array
-* :blue_square: icon - https://fontawesome.com/v6.0/icons?m=free
+* :blue_square: faIcon - https://fontawesome.com/v6.0/icons?m=free
 * :blue_square: tableGrid - build table from array
 * uList - ul list from array
 * oList - ol list from array

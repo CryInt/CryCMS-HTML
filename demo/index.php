@@ -11,7 +11,7 @@ echo HTML::h4('Header H4');
 echo HTML::h5('Header H5');
 echo HTML::h6('Header H6');
 
-echo HTML::icon('space-shuttle', 3);
+echo HTML::faIcon('space-shuttle', 3);
 
 echo HTML::a("GitHub", "https://github.com/CryInt/CryCMS-HTML", ['around' => ['_type' => 'div']]);
 

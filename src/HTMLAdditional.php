@@ -33,7 +33,7 @@ abstract class HTMLAdditional extends HTMLElements
         return HTMLSimpleElements::table($content, $properties);
     }
 
-    public static function icon(string $icon, int $size = 1, $prefix = 'fas'): string
+    public static function faIcon(string $icon, int $size = 1, $prefix = 'fas'): string
     {
         $class = [];
         $class[] = $prefix;
