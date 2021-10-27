@@ -70,13 +70,16 @@ namespace CryCMS;
  * @method static ruby (string $content, array $properties = [])
  * @method static s (string $optionsHTML, array $properties = [])
  * @method static samp (string $optionsHTML, array $properties = [])
+ * @method static section (string $optionsHTML, array $properties = [])
  * @method static select (string $optionsHTML, array $properties = [])
  * @method static script (string $text = '', array $properties = [])
+ * @method static span (string $text = '', array $properties = [])
  * @method static strong (string $text = '', array $properties = [])
  * @method static style (string $text = '', array $properties = [])
  * @method static sub (string $text = '', array $properties = [])
  * @method static summary (string $text = '', array $properties = [])
  * @method static sup (string $text = '', array $properties = [])
+ * @method static svg (string $text = '', array $properties = [])
  * @method static table (string $content, array $properties = [])
  * @method static th (string $content, array $properties = [])
  * @method static thead (string $content, array $properties = [])
@@ -102,6 +105,7 @@ namespace CryCMS;
  * @method static hr (array $properties = [])
  * @method static meta (array $properties = [])
  * @method static param (array $properties = [])
+ * @method static source (array $properties = [])
  * @method static track (array $properties = [])
  * @method static wbr (array $properties = [])
  */
@@ -125,7 +129,7 @@ abstract class HTMLSimpleElements extends HTMLHelper
         'p', 'pre', 'progress',
         'q',
         'rp', 'rt', 'ruby',
-        's', 'samp', 'select', 'script', 'strong', 'style', 'sub', 'summary', 'sup',
+        's', 'samp', 'section', 'select', 'span', 'script', 'strong', 'style', 'sub', 'summary', 'sup', 'svg',
         'table', 'tbody', 'td', 'tfoot', 'th', 'thead', 'tr', 'textarea', 'time', 'title',
         'u', 'ul',
         'var', 'video',
@@ -139,6 +143,7 @@ abstract class HTMLSimpleElements extends HTMLHelper
         'hr',
         'meta',
         'param',
+        'source',
         'track',
         'wbr',
     ];
@@ -157,7 +162,7 @@ abstract class HTMLSimpleElements extends HTMLHelper
             );
         }
 
-        return 'HTML element "' . $name . '" is not exists';
+        return self::pre('HTML element "' . $name . '" is not exists');
     }
 
     protected static function simpleElement(string $element, string $content, array $properties = []): string

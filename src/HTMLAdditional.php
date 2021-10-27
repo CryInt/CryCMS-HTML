@@ -42,4 +42,14 @@ abstract class HTMLAdditional extends HTMLElements
 
         return HTML::i('', ['class' => implode(" ", $class)]);
     }
+
+    public static function oList(array $content, array $properties = []): string
+    {
+        return HTML::ol(self::uoList($content), $properties);
+    }
+
+    public static function uList(array $content, array $properties = []): string
+    {
+        return HTML::ul(self::uoList($content), $properties);
+    }
 }

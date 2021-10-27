@@ -96,18 +96,18 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_square: HTML/Elements/s
 * :green_square: HTML/Elements/samp
 * :green_circle: HTML/Elements/script
-* HTML/Elements/section
+* :green_circle: HTML/Elements/section
 * :green_circle: HTML/Elements/select
-* HTML/Elements/source
-* HTML/Elements/spacer
-* HTML/Elements/span
-* HTML/Elements/strike
-* HTML/Elements/strong
+* :green_circle: HTML/Elements/source
+* :black_circle: HTML/Elements/spacer
+* :green_circle: HTML/Elements/span
+* :black_circle: HTML/Elements/strike
+* :green_circle: HTML/Elements/strong
 * :green_circle: HTML/Elements/style
 * :green_circle: HTML/Elements/sub
 * :green_circle: HTML/Elements/summary
 * :green_circle: HTML/Elements/sup
-* HTML/Elements/svg
+* :green_circle: HTML/Elements/svg
 * :green_circle: HTML/Elements/table
 * :green_circle: HTML/Elements/tbody
 * :green_circle: HTML/Elements/td
@@ -133,8 +133,8 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :blue_square: faIcon - https://fontawesome.com/v6.0/icons?m=free
 * :blue_square: tableGrid - build table from array
 * :blue_square: scriptSrc - return script element for external script files
-* uList - ul list from array
-* oList - ol list from array
+* :blue_square: uList - ul list from array
+* :blue_square: oList - ol list from array
 
 ---
 

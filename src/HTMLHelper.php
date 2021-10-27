@@ -90,6 +90,25 @@ abstract class HTMLHelper
         return HTML::$element($content);
     }
 
+    protected static function uoList(array $data): string
+    {
+        $content = [];
+
+        foreach ($data as $once) {
+            if (is_array($once)) {
+                $content[] = HTML::li(
+                    $once['content'] ?? '',
+                    self::unsetReturn($once, 'content')
+                );
+                continue;
+            }
+
+            $content[] = HTML::li($once);
+        }
+
+        return implode(HTML::$afterTag, $content);
+    }
+
     protected static function unsetReturn(array $array, string $unsetKey): array
     {
         if (array_key_exists($unsetKey, $array) !== false) {

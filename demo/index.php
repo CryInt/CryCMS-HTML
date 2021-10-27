@@ -38,10 +38,27 @@ echo HTML::tableGrid([
     'border' => '1',
 ]);
 
-echo "W" . HTML::wbr() . "BR";
+echo HTML::div("W" . HTML::wbr() . "BR");
+
+echo HTML::oList([
+    ['content' => 'first', 'id' => 'first_id'],
+    '2',
+    '3',
+    '4',
+], [
+    'data-test' => 'ol-list',
+]);
+
+echo HTML::uList([
+    '1',
+    '2',
+    '3',
+    ['content' => 'last', 'class' => 'lastElement'],
+], [
+    'data-test' => 'ul-list',
+]);
 
 echo HTML::strong("STRONG");
-
 echo HTML::style("body { font-size: 14px; }");
 
 $content = ob_get_clean();
