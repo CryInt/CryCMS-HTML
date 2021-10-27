@@ -24,15 +24,28 @@ abstract class HTMLElements extends HTMLSimpleElements
         return self::generateAround($html, $properties);
     }
 
+    public static function link(string $href, string $rel = '', array $properties = []): string
+    {
+        $properties['href'] = $href;
+
+        if (!empty($rel)) {
+            $properties['rel'] = $rel;
+        }
+
+        $propertiesIn = self::generateProperties($properties);
+
+        $html = "<link" . $propertiesIn . ">" . HTML::$afterTag;
+
+        return self::generateAround($html, $properties);
+    }
+
     public static function option(string $content, string $value, array $properties = []): string
     {
         return self::simpleElement('option', $content, array_merge($properties, ['value' => $value]));
     }
 
-    public static function script(string $src, array $properties = []): string
+    public static function scriptSrc(string $src, array $properties = []): string
     {
-        $propertiesIn = self::generateProperties($properties);
-        $html = "<script src='" . $src . "'" . $propertiesIn . "></script>" . HTML::$afterTag;
-        return self::generateAround($html, $properties);
+        return self::simpleElement('script', '', array_merge($properties, ['src' => $src]));
     }
 }

@@ -18,6 +18,9 @@ echo HTML::a("GitHub", "https://github.com/CryInt/CryCMS-HTML", ['around' => ['_
 echo HTML::br();
 
 echo HTML::tableGrid([
+    'caption' => [
+        'content' => 'TEST TABLE',
+    ],
     'thead' => [
         ['content' => '1', 'id' => 'first', 'class' => 'header'],
         '2',
@@ -44,11 +47,13 @@ echo HTML::style("body { font-size: 14px; }");
 $content = ob_get_clean();
 
 $title = HTML::title("HTML DEMO PAGE");
-$script = HTML::script('https://kit.fontawesome.com/b2478143fd.js', ['crossorigin' => 'anonymous']);
+$script = HTML::scriptSrc('https://kit.fontawesome.com/b2478143fd.js', ['crossorigin' => 'anonymous']);
+$link = HTML::link('/demo/demo.css', 'stylesheet');
+$meta = HTML::meta(['charset' => 'utf-8']);
 
 $body = HTML::body($content);
 
-$body = HTML::head($title . $script) . $body;
+$body = HTML::head($title . $meta . $link . $script) . $body;
 
 echo HTML::html($body);
 

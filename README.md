@@ -7,95 +7,95 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :black_circle: HTML/Elements/acronym
 * :green_circle: HTML/Elements/address
 * :black_circle: HTML/Elements/applet
-* :green_circle: HTML/Elements/area
+* :green_square: HTML/Elements/area
 * :green_circle: HTML/Elements/article
 * :green_circle: HTML/Elements/aside
 * :green_circle: HTML/Elements/audio
 * :green_circle: HTML/Elements/b
-* :green_circle: HTML/Elements/base
-* HTML/Elements/basefont
-* HTML/Elements/bdo
-* HTML/Elements/bgsound
-* HTML/Elements/big
-* HTML/Elements/blink
-* HTML/Elements/blockquote
+* :green_square: HTML/Elements/base
+* :black_circle: HTML/Elements/basefont
+* :green_circle: HTML/Elements/bdo
+* :black_circle: HTML/Elements/bgsound
+* :black_circle: HTML/Elements/big
+* :black_circle: HTML/Elements/blink
+* :green_circle: HTML/Elements/blockquote
 * :green_circle: HTML/Elements/body
-* :purple_circle: HTML/Elements/br
-* HTML/Elements/button
-* HTML/Elements/canvas
-* HTML/Elements/caption
-* HTML/Elements/center
-* HTML/Elements/cite
-* HTML/Elements/code
-* HTML/Elements/col
-* HTML/Elements/colgroup
-* HTML/Elements/command
-* HTML/Elements/datalist
-* HTML/Elements/dd
-* HTML/Elements/del
-* HTML/Elements/details
-* HTML/Elements/dfn
+* :green_square: HTML/Elements/br
+* :green_circle: HTML/Elements/button
+* :green_circle: HTML/Elements/canvas
+* :green_circle: HTML/Elements/caption
+* :black_circle: HTML/Elements/center
+* :green_circle: HTML/Elements/cite
+* :green_circle: HTML/Elements/code
+* :green_square: HTML/Elements/col
+* :green_circle: HTML/Elements/colgroup
+* :black_circle: HTML/Elements/command
+* :green_circle: HTML/Elements/datalist
+* :green_circle: HTML/Elements/dd
+* :green_circle: HTML/Elements/del
+* :green_circle: HTML/Elements/details
+* :green_circle: HTML/Elements/dfn
 * :green_circle: HTML/Elements/div
-* HTML/Elements/dl
-* HTML/Elements/dt
-* HTML/Elements/em
-* HTML/Elements/embed
-* HTML/Elements/fieldset
-* HTML/Elements/figcaption
-* HTML/Elements/figure
-* HTML/Elements/font
-* HTML/Elements/footer
+* :green_circle: HTML/Elements/dl
+* :green_circle: HTML/Elements/dt
+* :green_circle: HTML/Elements/em
+* :green_square: HTML/Elements/embed
+* :green_circle: HTML/Elements/fieldset
+* :green_circle: HTML/Elements/figcaption
+* :green_circle: HTML/Elements/figure
+* :black_circle: HTML/Elements/font
+* :green_circle: HTML/Elements/footer
 * :green_circle: HTML/Elements/form
-* HTML/Elements/frame
-* HTML/Elements/frameset
+* :black_circle: HTML/Elements/frame
+* :black_circle: HTML/Elements/frameset
 * :green_circle: HTML/Elements/h1, h2, h3, h4, h5, and h6
 * :green_circle: HTML/Elements/head
-* HTML/Elements/header
-* HTML/Elements/hgroup
-* HTML/Elements/hr
+* :green_circle: HTML/Elements/header
+* :green_circle: HTML/Elements/hgroup
+* :green_square: HTML/Elements/hr
 * :green_circle: HTML/Elements/html
 * :green_circle: HTML/Elements/i
-* HTML/Elements/iframe
+* :green_circle: HTML/Elements/iframe
 * :purple_circle: HTML/Elements/input
-* HTML/Elements/ins
-* HTML/Elements/kbd
+* :green_circle: HTML/Elements/ins
+* :green_circle: HTML/Elements/kbd
 * :black_circle: HTML/Elements/keygen
-* HTML/Elements/label
-* HTML/Elements/legend
-* HTML/Elements/li
-* HTML/Elements/link
-* HTML/Elements/listing
-* HTML/Elements/main
-* HTML/Elements/map
-* HTML/Elements/mark
-* HTML/Elements/marquee
-* HTML/Elements/math
-* HTML/Elements/menu
-* HTML/Elements/meta
-* HTML/Elements/meter
-* HTML/Elements/nav
-* HTML/Elements/nextid
-* HTML/Elements/nobr
-* HTML/Elements/noembed
-* HTML/Elements/noframes
-* HTML/Elements/noscript
-* HTML/Elements/object
-* HTML/Elements/ol
-* HTML/Elements/optgroup
+* :green_circle: HTML/Elements/label
+* :green_circle: HTML/Elements/legend
+* :green_circle: HTML/Elements/li
+* :purple_circle: HTML/Elements/link
+* :green_circle: HTML/Elements/listing
+* :green_circle: HTML/Elements/main
+* :green_circle: HTML/Elements/map
+* :green_circle: HTML/Elements/mark
+* :black_circle: HTML/Elements/marquee
+* :black_circle: HTML/Elements/math
+* :black_circle: HTML/Elements/menu
+* :green_square: HTML/Elements/meta
+* :green_circle: HTML/Elements/meter
+* :green_circle: HTML/Elements/nav
+* :black_circle: HTML/Elements/nextid
+* :black_circle: HTML/Elements/nobr
+* :black_circle: HTML/Elements/noembed
+* :black_circle: HTML/Elements/noframes
+* :green_circle: HTML/Elements/noscript
+* :green_circle: HTML/Elements/object
+* :green_circle: HTML/Elements/ol
+* :green_circle: HTML/Elements/optgroup
 * :purple_circle: HTML/Elements/option
-* HTML/Elements/output
-* HTML/Elements/p
-* HTML/Elements/param
-* HTML/Elements/plaintext
-* HTML/Elements/pre
-* HTML/Elements/progress
-* HTML/Elements/q
-* HTML/Elements/rp
-* HTML/Elements/rt
-* HTML/Elements/ruby
-* HTML/Elements/s
-* HTML/Elements/samp
-* :purple_circle: HTML/Elements/script
+* :green_circle: HTML/Elements/output
+* :green_circle: HTML/Elements/p
+* :green_square: HTML/Elements/param
+* :black_circle: HTML/Elements/plaintext
+* :green_square: HTML/Elements/pre
+* :green_square: HTML/Elements/progress
+* :green_square: HTML/Elements/q
+* :green_square: HTML/Elements/rp
+* :green_square: HTML/Elements/rt
+* :green_square: HTML/Elements/ruby
+* :green_square: HTML/Elements/s
+* :green_square: HTML/Elements/samp
+* :green_circle: HTML/Elements/script
 * HTML/Elements/section
 * :green_circle: HTML/Elements/select
 * HTML/Elements/source
@@ -118,13 +118,13 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_circle: HTML/Elements/time
 * :green_circle: HTML/Elements/title
 * :green_circle: HTML/Elements/tr
-* :green_circle: HTML/Elements/track
+* :green_square: HTML/Elements/track
 * :black_circle: HTML/Elements/tt
 * :green_circle: HTML/Elements/u
 * :green_circle: HTML/Elements/ul
 * :green_circle: HTML/Elements/var
 * :green_circle: HTML/Elements/video
-* :green_circle: HTML/Elements/wbr
+* :green_square: HTML/Elements/wbr
 * :black_circle: HTML/Elements/xmp
 
 **Additional:**
@@ -132,13 +132,15 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :blue_square: selectOption - select with auto create option from array
 * :blue_square: faIcon - https://fontawesome.com/v6.0/icons?m=free
 * :blue_square: tableGrid - build table from array
+* :blue_square: scriptSrc - return script element for external script files
 * uList - ul list from array
 * oList - ol list from array
 
 ---
 
-- :green_circle: - support with simple mode (content, properties)
+- :green_circle: - support with simple mode, full tag element (content, properties)
+- :green_square: - support with half mode, single tag element (properties)
 - :purple_circle: - elements with extended parameters
 - :blue_square: - not html element, its additional helpers
-- :black_circle: - deprecated
+- :black_circle: - deprecated or experimental
 - without icon - in develop

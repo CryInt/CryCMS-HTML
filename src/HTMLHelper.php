@@ -63,21 +63,39 @@ abstract class HTMLHelper
 
         $content = [];
 
+        if ($element === 'caption') {
+            return HTML::caption(
+                $data['content'] ?? '',
+                self::unsetReturn($data, 'content')
+            );
+        }
+
         foreach ($data as $once) {
+            $tElement = $element === 'thead' ? 'th' : 'td';
+
             if (is_array($once)) {
-                $c = $once['content'] ?? '';
-                $p = $once;
-                unset($p['content']);
-                $content[] = $element === 'thead' ? HTML::th($c, $p) : HTML::td($c, $p);
+                $content[] = HTML::$tElement(
+                    $once['content'] ?? '',
+                    self::unsetReturn($once, 'content')
+                );
                 continue;
             }
 
-            $content[] = $element === 'thead' ? HTML::th($once) : HTML::td($once);
+            $content[] = HTML::$tElement($once);
         }
 
         $content = implode(HTML::$afterTag, $content);
         $content = HTML::tr($content);
 
         return HTML::$element($content);
+    }
+
+    protected static function unsetReturn(array $array, string $unsetKey): array
+    {
+        if (array_key_exists($unsetKey, $array) !== false) {
+            unset($array[$unsetKey]);
+        }
+
+        return $array;
     }
 }
