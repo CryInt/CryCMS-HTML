@@ -22,7 +22,7 @@ abstract class HTMLHelper
 
         if (!empty($properties) && count($properties) > 0) {
             foreach ($properties as $key => $value) {
-                if (empty($value) && $value !== '') {
+                if (empty($value) && $value !== '' && $value !== '0' && $value !== 0) {
                     continue;
                 }
 
