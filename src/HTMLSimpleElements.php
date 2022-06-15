@@ -141,6 +141,7 @@ abstract class HTMLSimpleElements extends HTMLHelper
         'col',
         'embed',
         'hr',
+        'img',
         'meta',
         'param',
         'source',

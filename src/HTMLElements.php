@@ -3,9 +3,30 @@ namespace CryCMS;
 
 abstract class HTMLElements extends HTMLSimpleElements
 {
+    public static function tag(string $tag, array $properties = [], bool $half = false): string
+    {
+        if ($half) {
+            return self::halfElement($tag, $properties);
+        }
+
+        $content = '';
+        if (array_key_exists('content', $properties)) {
+            $content = $properties['content'];
+            unset($properties['content']);
+        }
+
+        return self::simpleElement($tag, $content, $properties);
+    }
+
     public static function a(string $content, string $href, array $properties = []): string
     {
         return self::simpleElement('a', $content, array_merge($properties, ['href' => $href]));
+    }
+
+    public static function img(string $src, array $properties = []): string
+    {
+        $properties['src'] = $src;
+        return self::halfElement('img', $properties);
     }
 
     public static function input(string $name, string $value = null, array $properties = []): string

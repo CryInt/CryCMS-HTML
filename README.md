@@ -56,6 +56,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_circle: HTML/Elements/html
 * :green_circle: HTML/Elements/i
 * :green_circle: HTML/Elements/iframe
+* :green_circle: HTML/Elements/img
 * :purple_circle: HTML/Elements/input
 * :green_circle: HTML/Elements/ins
 * :green_circle: HTML/Elements/kbd
@@ -129,6 +130,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 
 **Additional:**
 
+* :blue_square: tag - for any necessary html tag
 * :blue_square: selectOption - select with auto create option from array
 * :blue_square: faIcon - https://fontawesome.com/v6.0/icons?m=free
 * :blue_square: tableGrid - build table from array
