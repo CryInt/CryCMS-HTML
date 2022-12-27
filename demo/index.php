@@ -13,7 +13,20 @@ echo HTML::h6('Header H6');
 
 echo HTML::faIcon('space-shuttle', 3);
 
-echo HTML::a("GitHub", "https://github.com/CryInt/CryCMS-HTML", ['around' => ['_type' => 'div']]);
+echo HTML::a("GitHub", "https://github.com/CryInt/CryCMS-HTML", ['around' => ['_type' => 'div']], true);
+
+echo HTML::br();
+
+echo HTML::selectOptions(
+    'testSelect',
+    [
+        0 => '...',
+        1 => 'Option 1',
+        2 => 'Option 2',
+        3 => 'Option 3',
+    ],
+    1
+);
 
 echo HTML::br();
 
@@ -24,12 +37,12 @@ echo HTML::tableGrid([
     'thead' => [
         ['content' => '1', 'id' => 'first', 'class' => 'header'],
         '2',
-        '3' . HTML::sub('log'),
+        '3' . HTML::sub('log', [], true),
     ],
     'tbody' => ['C1', 'C2', 'C3'],
     'tfoot' => [
         [
-            'content' => 'footer' . HTML::sup(2),
+            'content' => 'footer' . HTML::sup(2, [], true),
             'colspan' => '3',
         ],
     ],

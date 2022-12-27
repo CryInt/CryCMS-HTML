@@ -3,7 +3,12 @@ namespace CryCMS;
 
 abstract class HTMLElements extends HTMLSimpleElements
 {
-    public static function tag(string $tag, array $properties = [], bool $half = false): string
+    public static function tag(
+        string $tag,
+        array $properties = [],
+        bool $half = false,
+        bool $withoutAfterTag = false
+    ): string
     {
         if ($half) {
             return self::halfElement($tag, $properties);
@@ -15,21 +20,45 @@ abstract class HTMLElements extends HTMLSimpleElements
             unset($properties['content']);
         }
 
-        return self::simpleElement($tag, $content, $properties);
+        return self::simpleElement(
+            $tag,
+            $content,
+            $properties,
+            $withoutAfterTag
+        );
     }
 
-    public static function a(string $content, string $href, array $properties = []): string
+    public static function a(
+        string $content,
+        string $href,
+        array $properties = [],
+        bool $withoutAfterTag = false
+    ): string
     {
-        return self::simpleElement('a', $content, array_merge($properties, ['href' => $href]));
+        return self::simpleElement(
+            'a',
+            $content,
+            array_merge($properties, ['href' => $href]),
+            $withoutAfterTag
+        );
     }
 
-    public static function img(string $src, array $properties = []): string
+    public static function img(
+        string $src,
+        array $properties = [],
+        bool $withoutAfterTag = false
+    ): string
     {
         $properties['src'] = $src;
-        return self::halfElement('img', $properties);
+        return self::halfElement('img', $properties, $withoutAfterTag);
     }
 
-    public static function input(string $name, string $value = null, array $properties = []): string
+    public static function input(
+        string $name,
+        string $value = null,
+        array $properties = [],
+        bool $withoutAfterTag = false
+    ): string
     {
         if (!isset($properties['type'])) {
             $properties['type'] = 'text';
@@ -40,12 +69,18 @@ abstract class HTMLElements extends HTMLSimpleElements
 
         $propertiesIn = self::generateProperties($properties);
 
-        $html = "<input" . $propertiesIn . ">" . HTML::$afterTag;
+        $html = "<input" . $propertiesIn . ">";
+        $html .= ($withoutAfterTag) ? '' : HTML::$afterTag;
 
         return self::generateAround($html, $properties);
     }
 
-    public static function link(string $href, string $rel = '', array $properties = []): string
+    public static function link(
+        string $href,
+        string $rel = '',
+        array $properties = [],
+        bool $withoutAfterTag = false
+    ): string
     {
         $properties['href'] = $href;
 
@@ -55,18 +90,38 @@ abstract class HTMLElements extends HTMLSimpleElements
 
         $propertiesIn = self::generateProperties($properties);
 
-        $html = "<link" . $propertiesIn . ">" . HTML::$afterTag;
+        $html = "<link" . $propertiesIn . ">";
+        $html .= ($withoutAfterTag) ? '' : HTML::$afterTag;
 
         return self::generateAround($html, $properties);
     }
 
-    public static function option(string $content, string $value, array $properties = []): string
+    public static function option(
+        string $content,
+        string $value,
+        array $properties = [],
+        bool $withoutAfterTag = false
+    ): string
     {
-        return self::simpleElement('option', $content, array_merge($properties, ['value' => $value]));
+        return self::simpleElement(
+            'option',
+            $content,
+            array_merge($properties, ['value' => $value]),
+            $withoutAfterTag
+        );
     }
 
-    public static function scriptSrc(string $src, array $properties = []): string
+    public static function scriptSrc(
+        string $src,
+        array $properties = [],
+        bool $withoutAfterTag = false
+    ): string
     {
-        return self::simpleElement('script', '', array_merge($properties, ['src' => $src]));
+        return self::simpleElement(
+            'script',
+            '',
+            array_merge($properties, ['src' => $src]),
+            $withoutAfterTag
+        );
     }
 }

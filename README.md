@@ -99,6 +99,7 @@ https://www.w3.org/wiki/Category:HTMLElement
 * :green_circle: HTML/Elements/script
 * :green_circle: HTML/Elements/section
 * :green_circle: HTML/Elements/select
+* :green_circle: HTML/Elements/small
 * :green_circle: HTML/Elements/source
 * :black_circle: HTML/Elements/spacer
 * :green_circle: HTML/Elements/span
