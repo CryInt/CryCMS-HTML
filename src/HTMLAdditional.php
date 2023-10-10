@@ -3,7 +3,7 @@ namespace CryCMS;
 
 abstract class HTMLAdditional extends HTMLElements
 {
-    public static function selectOptions(string $name, array $options = [], string $selected = null, array $properties = []): string
+    public static function selectOptions(string $name, array $options = [], $selected = null, array $properties = []): string
     {
         $optionsArray = [];
         foreach ($options as $optionKey => $optionTitle) {
