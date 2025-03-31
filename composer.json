@@ -5,7 +5,6 @@
     "type": "library",
     "require": {
     },
-    "license": "free",
     "autoload": {
         "psr-4": {
             "CryCMS\\": "src/"
