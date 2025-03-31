@@ -53,7 +53,7 @@ abstract class HTMLAdditional extends HTMLElements
         return HTML::ul(self::uoList($content), $properties);
     }
 
-    public static function framingContent(string $content, string $with = null): string
+    public static function framingContent(string $content, ?string $with = null): string
     {
         if ($with === null) {
             $with = HTML::$afterTag;

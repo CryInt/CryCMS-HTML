@@ -1,6 +1,6 @@
 {
     "name": "cry/cry-cms-html",
-    "version": "1.04",
+    "version": "1.05",
     "description": "class for create html from php",
     "type": "library",
     "require": {

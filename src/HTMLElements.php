@@ -54,10 +54,10 @@ abstract class HTMLElements extends HTMLSimpleElements
     }
 
     public static function input(
-        string $name,
-        string $value = null,
-        array $properties = [],
-        bool $withoutAfterTag = false
+        string  $name,
+        ?string $value = null,
+        array   $properties = [],
+        bool    $withoutAfterTag = false
     ): string
     {
         if (!isset($properties['type'])) {
