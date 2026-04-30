@@ -3,12 +3,19 @@ namespace CryCMS;
 
 abstract class HTMLHelper
 {
+    /**
+     * @param string $html
+     * @param array<string, mixed> $properties = []
+     *
+     * @return string
+     */
     protected static function generateAround(string $html, array $properties = []): string
     {
         if (
-            isset($properties['around']['_type']) &&
+            array_key_exists('around', $properties) &&
             is_array($properties['around']) &&
-            is_callable(__CLASS__, $properties['around']['_type']) === true
+            array_key_exists('_type', $properties['around']) &&
+            is_callable([HTML::class, $properties['around']['_type']]) === true
         ) {
             $html = HTML::{$properties['around']['_type']}($html, $properties['around']);
         }
@@ -16,11 +23,16 @@ abstract class HTMLHelper
         return $html;
     }
 
-    protected static function generateProperties($properties = null): string
+    /**
+     * @param array<string, mixed> $properties = []
+     *
+     * @return string
+     */
+    protected static function generateProperties(array $properties = []): string
     {
         $content = [];
 
-        if (!empty($properties) && count($properties) > 0) {
+        if (!empty($properties)) {
             foreach ($properties as $key => $value) {
                 if (empty($value) && $value !== '' && $value !== '0' && $value !== 0) {
                     continue;
@@ -31,6 +43,7 @@ abstract class HTMLHelper
                 }
 
                 if (is_array($value)) {
+                    /** @var array<string> $value */
                     $content[] = $key . '="' . implode(' ', $value) . '"';
                     continue;
                 }
@@ -39,7 +52,14 @@ abstract class HTMLHelper
                     continue;
                 }
 
-                $content[] = $key . '="' . $value . '"';
+                if (is_bool($value)) {
+                    $content[] = $key;
+                    continue;
+                }
+
+                if (is_string($value)) {
+                    $content[] = $key . '="' . $value . '"';
+                }
             }
         }
 
@@ -49,12 +69,18 @@ abstract class HTMLHelper
     protected static function removeDoubleAfterTag(string $string): string
     {
         if (!empty(HTML::$afterTag)) {
-            return preg_replace('/' . HTML::$afterTag . '{2,}/', HTML::$afterTag, $string);
+            return preg_replace('/' . HTML::$afterTag . '{2,}/', HTML::$afterTag, $string) ?? '';
         }
 
         return $string;
     }
 
+    /**
+     * @param string $element
+     * @param array<string|array<string, string>> $data
+     *
+     * @return string
+     */
     protected static function parseTablePart(string $element, array $data = []): string
     {
         if (count($data) === 0) {
@@ -64,6 +90,7 @@ abstract class HTMLHelper
         $content = [];
 
         if ($element === 'caption') {
+            /** @var array<string, string> $data */
             return HTML::caption(
                 $data['content'] ?? '',
                 self::unsetReturn($data, 'content')
@@ -74,6 +101,7 @@ abstract class HTMLHelper
             $tElement = $element === 'thead' ? 'th' : 'td';
 
             if (is_array($once)) {
+                /** @var array<string, string> $once */
                 $content[] = HTML::$tElement(
                     $once['content'] ?? '',
                     self::unsetReturn($once, 'content')
@@ -90,6 +118,11 @@ abstract class HTMLHelper
         return HTML::$element($content);
     }
 
+    /**
+     * @param array<string|array<string, string>> $data
+     *
+     * @return string
+     */
     protected static function uoList(array $data): string
     {
         $content = [];
@@ -109,6 +142,12 @@ abstract class HTMLHelper
         return implode(HTML::$afterTag, $content);
     }
 
+    /**
+     * @param array<string, mixed> $array
+     * @param string $unsetKey
+     *
+     * @return array<string, mixed>
+     */
     protected static function unsetReturn(array $array, string $unsetKey): array
     {
         if (array_key_exists($unsetKey, $array) !== false) {

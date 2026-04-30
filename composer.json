@@ -1,11 +1,9 @@
 {
     "name": "cry/cry-cms-html",
-    "version": "1.06",
+    "version": "2.0.0",
     "description": "class for create html from php",
     "type": "library",
     "license": "MIT",
-    "require": {
-    },
     "autoload": {
         "psr-4": {
             "CryCMS\\": "src/"
@@ -16,5 +14,11 @@
             "name": "Cry.Int",
             "email": "cry.int@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^2.1"
+    },
+    "require": {
+        "php": ">=8.2"
+    }
 }

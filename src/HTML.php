@@ -3,9 +3,10 @@ namespace CryCMS;
 
 class HTML extends HTMLAdditional
 {
-    public static $afterTag = PHP_EOL;
+    public static string $afterTag = PHP_EOL;
 
-    public static $autoFramingContent = [
+    /** @var array<int, string> */
+    public static array $autoFramingContent = [
         'html',
         'head',
         'body',

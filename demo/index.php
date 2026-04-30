@@ -77,7 +77,7 @@ echo HTML::style("body { font-size: 14px; }");
 $content = ob_get_clean();
 
 $title = HTML::title("HTML DEMO PAGE");
-$script = HTML::scriptSrc('https://kit.fontawesome.com/b2478143fd.js', ['crossorigin' => 'anonymous']);
+$script = HTML::scriptSrc('https://kit.fontawesome.com/b2478143fd.js', ['crossorigin' => 'anonymous', 'defer' => true]);
 $link = HTML::link('/demo/demo.css', 'stylesheet');
 $meta = HTML::meta(['charset' => 'utf-8']);
 

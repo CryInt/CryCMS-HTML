@@ -3,6 +3,14 @@ namespace CryCMS;
 
 abstract class HTMLElements extends HTMLSimpleElements
 {
+    /**
+     * @param string $tag
+     * @param array<string, mixed> $properties = []
+     * @param bool $half
+     * @param bool $withoutAfterTag
+     *
+     * @return string
+     */
     public static function tag(
         string $tag,
         array $properties = [],
@@ -16,7 +24,10 @@ abstract class HTMLElements extends HTMLSimpleElements
 
         $content = '';
         if (array_key_exists('content', $properties)) {
-            $content = $properties['content'];
+            if (is_string($properties['content'])) {
+                $content = $properties['content'];
+            }
+
             unset($properties['content']);
         }
 
@@ -28,6 +39,14 @@ abstract class HTMLElements extends HTMLSimpleElements
         );
     }
 
+    /**
+     * @param string $content
+     * @param string $href
+     * @param array<string, mixed> $properties = []
+     * @param bool $withoutAfterTag
+     *
+     * @return string
+     */
     public static function a(
         string $content,
         string $href,
@@ -43,6 +62,13 @@ abstract class HTMLElements extends HTMLSimpleElements
         );
     }
 
+    /**
+     * @param string $src
+     * @param array<string, mixed> $properties = []
+     * @param bool $withoutAfterTag
+     *
+     * @return string
+     */
     public static function img(
         string $src,
         array $properties = [],
@@ -53,11 +79,19 @@ abstract class HTMLElements extends HTMLSimpleElements
         return self::halfElement('img', $properties, $withoutAfterTag);
     }
 
+    /**
+     * @param string $name
+     * @param string|null $value
+     * @param array<string, mixed> $properties = []
+     * @param bool $withoutAfterTag
+     *
+     * @return string
+     */
     public static function input(
-        string  $name,
+        string $name,
         ?string $value = null,
-        array   $properties = [],
-        bool    $withoutAfterTag = false
+        array $properties = [],
+        bool $withoutAfterTag = false
     ): string
     {
         if (!isset($properties['type'])) {
@@ -75,6 +109,13 @@ abstract class HTMLElements extends HTMLSimpleElements
         return self::generateAround($html, $properties);
     }
 
+    /**
+     * @param string $href
+     * @param string $rel
+     * @param array<string, mixed> $properties = []
+     * @param bool $withoutAfterTag
+     * @return string
+     */
     public static function link(
         string $href,
         string $rel = '',
@@ -96,6 +137,14 @@ abstract class HTMLElements extends HTMLSimpleElements
         return self::generateAround($html, $properties);
     }
 
+    /**
+     * @param string $content
+     * @param string $value
+     * @param array<string, mixed> $properties = []
+     * @param bool $withoutAfterTag
+     *
+     * @return string
+     */
     public static function option(
         string $content,
         string $value,
@@ -111,6 +160,12 @@ abstract class HTMLElements extends HTMLSimpleElements
         );
     }
 
+    /**
+     * @param string $src
+     * @param array<string, mixed> $properties = []
+     * @param bool $withoutAfterTag
+     * @return string
+     */
     public static function scriptSrc(
         string $src,
         array $properties = [],

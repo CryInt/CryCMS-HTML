@@ -3,7 +3,20 @@ namespace CryCMS;
 
 abstract class HTMLAdditional extends HTMLElements
 {
-    public static function selectOptions(string $name, array $options = [], $selected = null, array $properties = []): string
+    /**
+     * @param string $name
+     * @param array<int|string, string> $options = []
+     * @param int|string|null $selected = null
+     * @param array<string, mixed> $properties = []
+     *
+     * @return string
+     */
+    public static function selectOptions(
+        string $name,
+        array $options = [],
+        int|string|null $selected = null,
+        array $properties = []
+    ): string
     {
         $optionsArray = [];
         foreach ($options as $optionKey => $optionTitle) {
@@ -12,7 +25,7 @@ abstract class HTMLAdditional extends HTMLElements
                 $prop['selected'] = 'selected';
             }
 
-            $optionsArray[] = HTMLElements::option($optionTitle, $optionKey, $prop);
+            $optionsArray[] = HTMLElements::option($optionTitle, (string)$optionKey, $prop);
         }
 
         $optionsHTML = implode(PHP_EOL, $optionsArray);
@@ -22,6 +35,12 @@ abstract class HTMLAdditional extends HTMLElements
         return HTMLSimpleElements::select($optionsHTML, $properties);
     }
 
+    /**
+     * @param array<string, array<string|array<string, string>>> $contains
+     * @param array<string, mixed> $properties
+     *
+     * @return string
+     */
     public static function tableGrid(array $contains, array $properties = []): string
     {
         $content = '';
@@ -33,7 +52,7 @@ abstract class HTMLAdditional extends HTMLElements
         return HTMLSimpleElements::table($content, $properties);
     }
 
-    public static function faIcon(string $icon, int $size = 1, $prefix = 'fas'): string
+    public static function faIcon(string $icon, int $size = 1, string $prefix = 'fas'): string
     {
         $class = [];
         $class[] = $prefix;
@@ -43,11 +62,23 @@ abstract class HTMLAdditional extends HTMLElements
         return HTML::i('', ['class' => implode(" ", $class)]);
     }
 
+    /**
+     * @param array<string|array<string, string>> $content
+     * @param array<string, mixed> $properties = []
+     *
+     * @return string
+     */
     public static function oList(array $content, array $properties = []): string
     {
         return HTML::ol(self::uoList($content), $properties);
     }
 
+    /**
+     * @param array<string|array<string, string>> $content
+     * @param array<string, mixed> $properties = []
+     *
+     * @return string
+     */
     public static function uList(array $content, array $properties = []): string
     {
         return HTML::ul(self::uoList($content), $properties);
