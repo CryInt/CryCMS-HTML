@@ -57,7 +57,7 @@ abstract class HTMLHelper
                     continue;
                 }
 
-                if (is_string($value)) {
+                if (is_string($value) || is_numeric($value)) {
                     $content[] = $key . '="' . $value . '"';
                 }
             }
